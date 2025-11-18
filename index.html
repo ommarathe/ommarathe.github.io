@@ -4,48 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Marathe - Personal Website</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 40px;
+            margin: 20px;
             background-color: #f4f4f4;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px gray;
         }
+
         nav {
             background: #0077cc;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
+            font-size: 18px;
         }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
         h1, h2 {
             color: #333;
+            margin-top: 0;
         }
+
         a {
             color: #0077cc;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         .tab-content {
             display: none;
         }
+
         .active {
             display: block;
         }
+
+        /* About section layout */
+        #about {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        #about-text {
+            flex: 2;
+        }
+
+        #about-img {
+            flex: 1;
+        }
+
+        #about-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* ------------------------------ */
+        /* 📱 MOBILE FRIENDLY ADAPTATION */
+        /* ------------------------------ */
+        @media (max-width: 700px) {
+
+            body {
+                margin: 10px;
+            }
+
+            nav a {
+                display: inline-block;
+                padding: 8px 10px;
+                margin: 5px;
+                font-size: 17px;
+            }
+
+            #about {
+                flex-direction: column;
+            }
+
+            #about-text, 
+            #about-img {
+                width: 100%;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
     </style>
+
     <script>
         function showTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -53,66 +124,73 @@
         }
     </script>
 </head>
+
 <body>
+
     <nav>
         <a href="#" onclick="showTab('about')">About</a>
-        <a href="#" onclick="showTab('articles')">Work</a> 
+        <a href="#" onclick="showTab('articles')">Work</a>
     </nav>
-    
-    <div class="container">
-        <div id="about" class="tab-content active" style="display: flex; gap: 20px; align-items: flex-start;">
-    <div style="flex: 2;">
-        <h1>Om Marathe</h1>
-        <p>Om conducts research in international political economy (IPE), with a focus on multilateral development banks (MDBs), recipient bureaucracies, and state–society relations. He holds degrees in public policy, law, and engineering, as well as an advanced diploma in Spanish Studies. His interdisciplinary background is complemented by professional experience as a journalist at <i>The Indian Express</i>. Trained in both quantitative and qualitative methods, he brings a well-rounded and methodologically rigorous approach to his research.</p>
-        <p><strong>Email:</strong> <a href="mailto:o.marathe@hertie-school.org">o.marathe@hertie-school.org</a></p>
-        <p><strong>Address:</strong> Cantianstraße 7, Berlin, 10437</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/om-marathe-96936888/" target="_blank">Om Marathe</a></p>
-    </div>
-    <div style="flex: 1;">
-        <img src="assets/images/om_hertie.jpg" alt="Om Marathe" style="max-width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-    </div>
-</div>
 
-        
+    <div class="container">
+
+        <!-- ABOUT TAB -->
+        <div id="about" class="tab-content active">
+            <div id="about-text">
+                <h1>Om Marathe</h1>
+                <p>Om conducts research in international political economy (IPE), with a focus on multilateral development banks (MDBs), recipient bureaucracies, and state–society relations. He holds degrees in public policy, law, and engineering, as well as an advanced diploma in Spanish Studies. His interdisciplinary background is complemented by professional experience as a journalist at <i>The Indian Express</i>. Trained in both quantitative and qualitative methods, he brings a well-rounded and methodologically rigorous approach to his research.</p>
+
+                <p><strong>Email:</strong> <a href="mailto:o.marathe@hertie-school.org">o.marathe@hertie-school.org</a></p>
+                <p><strong>Address:</strong> Cantianstraße 7, Berlin, 10437</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/om-marathe-96936888/" target="_blank">Om Marathe</a></p>
+            </div>
+
+            <div id="about-img">
+                <img src="assets/images/om_hertie.jpg" alt="Om Marathe">
+            </div>
+        </div>
+
+        <!-- ARTICLES TAB -->
         <div id="articles" class="tab-content">
             <h2>Research in the Policy Domain</h2>
-          <ul>
-    <li><a href="https://www.orfonline.org/expert-speak/perception-matters-how-chinese-funding-impacts-beijings-image-in-india" target="_blank">How Chinese Funding Impacts Beijing’s Image in India</a></li>
-    <li><a href="https://theprint.in/opinion/indians-dont-want-foreign-banks-funding-countrys-development-they-only-trust-the-govt/2000636/" target="_blank">Why Indians Trust Govt Over Foreign Banks for Development</a></li>
-    <li><a href="https://www.moneycontrol.com/news/opinion/how-indias-upi-and-brazils-pix-are-fast-pushing-the-financial-inclusion-pedal-12352961.html" target="_blank">How India’s UPI and Brazil’s PIX Boost Financial Inclusion</a></li>
-    <li><a href="https://www.thegovernancepost.org/2024/05/why-hungary-wont-pull-off-a-poland-any-time-soon/" target="_blank">Why Hungary Won’t Pull Off A Poland Any Time Soon</a></li>          
-</ul>
+            <ul>
+                <li><a href="https://www.orfonline.org/expert-speak/perception-matters-how-chinese-funding-impacts-beijings-image-in-india" target="_blank">How Chinese Funding Impacts Beijing’s Image in India</a></li>
+                <li><a href="https://theprint.in/opinion/indians-dont-want-foreign-banks-funding-countrys-development-they-only-trust-the-govt/2000636/" target="_blank">Why Indians Trust Govt Over Foreign Banks for Development</a></li>
+                <li><a href="https://www.moneycontrol.com/news/opinion/how-indias-upi-and-brazils-pix-are-fast-pushing-the-financial-inclusion-pedal-12352961.html" target="_blank">How India’s UPI and Brazil’s PIX Boost Financial Inclusion</a></li>
+                <li><a href="https://www.thegovernancepost.org/2024/05/why-hungary-wont-pull-off-a-poland-any-time-soon/" target="_blank">Why Hungary Won’t Pull Off A Poland Any Time Soon</a></li>
+            </ul>
 
             <h2>Select Journalistic Work</h2>
-          <ul>
-    <li><a href="https://indianexpress.com/article/explained/explained-the-crescent-in-islamic-flags-chandrayaan-2-harbhajan-singh-tweet-5848542/" target="_blank">Explained: The Crescent in Islamic Flags</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-malaysia-is-the-worlds-only-monarchy-of-its-kind-heres-why-5874995/" target="_blank">Malaysia's Unique Monarchy</a></li>
-    <li><a href="https://indianexpress.com/article/explained/aden-the-war-torn-yemeni-ports-deep-india-connections-5904398/" target="_blank">Aden: The War-Torn Yemeni Port</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-sikkim-chogyal-rule-to-indian-state-sdf-bjp-5921574/" target="_blank">Sikkim: From Chogyal Rule to Indian State</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-why-us-is-under-pressure-to-choke-its-vaping-industry-5995733/" target="_blank">US Vaping Industry Under Pressure</a></li>
-    <li><a href="https://indianexpress.com/article/explained/urdu-marsiya-poetry-in-india-hamid-ansari-6018644/" target="_blank">Urdu Marsiya Poetry in India</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-portuguese-leader-antonio-costas-old-india-connection-modi-6061266/" target="_blank">Portuguese Leader Antonio Costa’s India Connection</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-c40-world-mayors-summit-the-international-meet-that-kejriwal-could-not-attend-6062709/" target="_blank">C40 World Mayors Summit</a></li>
-    <li><a href="https://indianexpress.com/article/explained/lese-majeste-law-explained-why-insulting-thai-king-can-land-you-in-jail-6089557/" target="_blank">Lèse Majesté Law in Thailand</a></li>
-    <li><a href="https://indianexpress.com/article/explained/latin-america-on-the-boil-what-is-happening-where-6093009/" target="_blank">Latin America on the Boil</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-heres-why-lawyers-in-india-cant-advertise-their-services-6096311/" target="_blank">Why Lawyers in India Can't Advertise</a></li>
-    <li><a href="https://indianexpress.com/article/explained/whats-happening-in-chile-6098688/" target="_blank">What's Happening in Chile?</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-significance-of-the-feni-river-mou-between-india-and-bangladesh-6108389/" target="_blank">Feni River MoU Between India & Bangladesh</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-who-are-the-travellers-quoted-in-ayodhya-judgment-6113085/" target="_blank">Travellers Quoted in Ayodhya Judgment</a></li>
-    <li><a href="https://indianexpress.com/article/explained/italy-protest-matteo-salvini-sardines-bella-ciao-6129038/" target="_blank">Italy Protest: The Sardines Movement</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-what-is-shivaji-park-and-why-is-it-important-for-the-shiv-sena-6139866/" target="_blank">Shivaji Park and its Political Importance</a></li>
-    <li><a href="https://indianexpress.com/article/explained/daman-diu-dadra-nagar-haveli-a-short-recent-history-6141034/" target="_blank">Daman & Diu and Dadra & Nagar Haveli: A Short History</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-sc-supreme-court-use-extraordinary-powers-constitution-allow-divorce-6186310/" target="_blank">SC's Extraordinary Powers to Allow Divorce</a></li>
-    <li><a href="https://indianexpress.com/article/explained/the-tricolours-glorious-rise-recalling-bose-in-andaman-76-years-ago-6191654/" target="_blank">The Tricolour's Glorious Rise in Andaman</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-who-was-lord-curzon-to-whose-table-the-west-bengal-governor-recently-referred-6196847/" target="_blank">Who Was Lord Curzon?</a></li>
-    <li><a href="https://indianexpress.com/article/explained/iran-us-tension-qassem-soleimani-death-what-is-jus-cogens-6203579/" target="_blank">Jus Cogens and Iran-US Tensions</a></li>
-    <li><a href="https://indianexpress.com/article/explained/explained-manilal-doctor-mahatma-gandhi-overseas-work-6208393/" target="_blank">Manilal Doctor: Gandhi's Influence Abroad</a></li>
-    <li><a href="https://indianexpress.com/article/explained/presumption-of-constitutionality-in-the-case-of-the-new-citizenship-law-6211963/" target="_blank">Presumption of Constitutionality and Citizenship Law</a></li>
-    <li><a href="https://indianexpress.com/article/explained/how-postal-voting-in-the-us-works-donald-trump-6535362/" target="_blank">How Postal Voting Works in the US</a></li>
-    <li><a href="https://indianexpress.com/article/explained/ruth-bader-ginsberg-us-supreme-court-justice-appointment-merrick-garland-explained-6602470/" target="_blank">Ruth Bader Ginsburg and US Supreme Court Appointments</a></li>
-</ul>
-
+            <ul>
+                <!-- (Your long list preserved exactly as before) -->
+                <li><a href="https://indianexpress.com/article/explained/explained-the-crescent-in-islamic-flags-chandrayaan-2-harbhajan-singh-tweet-5848542/" target="_blank">Explained: The Crescent in Islamic Flags</a></li>
+                <li><a href="https://indianexpress.com/article/explained/explained-malaysia-is-the-worlds-only-monarchy-of-its-kind-heres-why-5874995/" target="_blank">Malaysia's Unique Monarchy</a></li>
+                <li><a href="https://indianexpress.com/article/explained/aden-the-war-torn-yemeni-ports-deep-india-connections-5904398/" target="_blank">Aden: The War-Torn Yemeni Port</a></li>
+                <li><a href="https://indianexpress.com/article/explained/explained-sikkim-chogyal-rule-to-indian-state-sdf-bjp-5921574/" target="_blank">Sikkim: From Chogyal Rule to Indian State</a></li>
+                <li><a href="https://indianexpress.com/article/explained/explained-why-us-is-under-pressure-to-choke-its-vaping-industry-5995733/" target="_blank">US Vaping Industry Under Pressure</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/urdu-marsiya-poetry-in-india-hamid-ansari-6018644/" target="_blank">Urdu Marsiya Poetry in India</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/explained-portuguese-leader-antonio-costas-old-india-connection-modi-6061266/" target="_blank">Portuguese Leader Antonio Costa’s India Connection</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/explained-c40-world-mayors-summit-the-international-meet-that-kejriwal-could-not-attend-6062709/" target="_blank">C40 World Mayors Summit</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/lese-majeste-law-explained-why-insulting-thai-king-can-land-you-in-jail-6089557/" target="_blank">Lèse Majesté Law in Thailand</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/latin-america-on-the-boil-what-is-happening-where-6093009/" target="_blank">Latin America on the Boil</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/explained-heres-why-lawyers-in-india-cant-advertise-their-services-6096311/" target="_blank">Why Lawyers in India Can't Advertise</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/whats-happening-in-chile-6098688/" target="_blank">What's Happening in Chile?</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/explained-significance-of-the-feni-river-mou-between-india-and-bangladesh-6108389/" target="_blank">Feni River MoU Between India & Bangladesh</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/explained-who-are-the-travellers-quoted-in-ayodhya-judgment-6113085/" target="_blank">Travellers Quoted in Ayodhya Judgment</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/italy-protest-matteo-salvini-sardines-bella-ciao-6129038/" target="_blank">Italy Protest: The Sardines Movement</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/explained-what-is-shivaji-park-and-why-is-it-important-for-the-shiv-sena-6139866/" target="_blank">Shivaji Park and its Political Importance</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/daman-diu-dadra-nagar-haveli-a-short-recent-history-6141034/" target="_blank">Daman & Diu and Dadra & Nagar Haveli: A Short History</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/explained-sc-supreme-court-use-extraordinary-powers-constitution-allow-divorce-6186310/" target="_blank">SC's Extraordinary Powers to Allow Divorce</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/the-tricolours-glorious-rise-recalling-bose-in-andaman-76-years-ago-6191654/" target="_blank">The Tricolour's Glorious Rise in Andaman</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/explained-who-was-lord-curzon-to-whose-table-the-west-bengal-governor-recently-referred-6196847/" target="_blank">Who Was Lord Curzon?</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/iran-us-tension-qassem-soleimani-death-what-is-jus-cogens-6203579/" target="_blank">Jus Cogens and Iran-US Tensions</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/explained-manilal-doctor-mahatma-gandhi-overseas-work-6208393/" target="_blank">Manilal Doctor: Gandhi's Influence Abroad</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/presumption-of-constitutionality-in-the-case-of-the-new-citizenship-law-6211963/" target="_blank">Presumption of Constitutionality and Citizenship Law</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/how-postal-voting-in-the-us-works-donald-trump-6535362/" target="_blank">How Postal Voting Works in the US</a></li> 
+                <li><a href="https://indianexpress.com/article/explained/ruth-bader-ginsberg-us-supreme-court-justice-appointment-merrick-garland-explained-6602470/" target="_blank">Ruth Bader Ginsburg and US Supreme Court Appointments</a></li>
+            </ul>
         </div>
+
     </div>
 </body>
 </html>
